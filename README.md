@@ -1,4 +1,5 @@
 # 🌍 ProJectAI1  
+###### Idea
 ### By **จอร์จจี้ขี้อยู่ปากซอย**  
 
 ## 🎮 AI-Powered Simple Game: Smart Settlement Simulator  
