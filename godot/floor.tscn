@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://ca17wtvnu2sc"]
+
+[ext_resource type="Texture2D" uid="uid://bmgtxhg45hwp2" path="res://Texture/PNG/Light/texture_08.png" id="1_oj3tl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cgngl"]
+albedo_texture = ExtResource("1_oj3tl")
+uv1_scale = Vector3(4.22, 4.22, 4.22)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ryoud"]
+material = SubResource("StandardMaterial3D_cgngl")
+size = Vector2(2.985, 2.97)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oj3tl"]
+size = Vector3(30, 0.1, 30)
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_ryoud")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.127869, 0, -0.0164185)
+shape = SubResource("BoxShape3D_oj3tl")

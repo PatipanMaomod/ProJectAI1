@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjva2hhaqqwgm"]
+
+[ext_resource type="PackedScene" uid="uid://ca17wtvnu2sc" path="res://seene/floor.tscn" id="1_4decx"]
+[ext_resource type="PackedScene" uid="uid://bc4okkchv1qil" path="res://seene/player.tscn" id="2_gvxhv"]
+[ext_resource type="Script" uid="uid://b6kv11gophv6p" path="res://seene/player.gd" id="3_xod0r"]
+[ext_resource type="PackedScene" uid="uid://bf5l7pmxqoj4j" path="res://seene/target.tscn" id="4_mttgd"]
+
+[node name="Main" type="Node3D"]
+
+[node name="camera" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.920211, 0.391422, 0, -0.391422, 0.920211, 0, 13.8707, 27.149)
+
+[node name="Camera3D" type="Camera3D" parent="camera"]
+fov = 61.4
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.00104721, 0.999999, 0, -0.999999, 0.00104721, 0, 201.185, 0)
+
+[node name="floor" parent="." instance=ExtResource("1_4decx")]
+use_collision = true
+collision_priority = 0.7
+
+[node name="player" parent="." instance=ExtResource("2_gvxhv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+script = ExtResource("3_xod0r")
+
+[node name="Target" parent="." instance=ExtResource("4_mttgd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.949, 5.52362, 0)

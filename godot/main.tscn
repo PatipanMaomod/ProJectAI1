@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://bnea7k0y5kv0a"]
+
+[ext_resource type="PackedScene" uid="uid://ca17wtvnu2sc" path="res://floor.tscn" id="1_h2yge"]
+[ext_resource type="PackedScene" uid="uid://84og7jgwmo1e" path="res://wall.tscn" id="1_lquwl"]
+[ext_resource type="PackedScene" uid="uid://bc4okkchv1qil" path="res://player.tscn" id="2_1bvp3"]
+[ext_resource type="Script" uid="uid://b6kv11gophv6p" path="res://player.gd" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://bf5l7pmxqoj4j" path="res://target.tscn" id="3_lquwl"]
+
+[node name="Main" type="Node3D"]
+
+[node name="wall" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4443, 0.792294, 0)
+
+[node name="wall1" parent="wall" instance=ExtResource("1_lquwl")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -15.0594, 0, -0.828646)
+collision_mask = 2
+
+[node name="wall2" parent="wall" instance=ExtResource("1_lquwl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.00795, 0, 3.07298)
+
+[node name="wall3" parent="wall" instance=ExtResource("1_lquwl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.23323, 0, -4.47717)
+
+[node name="camera" type="Node3D" parent="."]
+transform = Transform3D(-3.64814e-08, 0.55086, -0.834598, 2.40788e-08, 0.834598, 0.55086, 1, 6.58017e-15, -4.37114e-08, -11.6009, 16.4562, -1.04862)
+
+[node name="Camera3D" type="Camera3D" parent="camera"]
+transform = Transform3D(1, -2.14867e-08, -5.64554e-09, 2.14867e-08, 0.870845, 0.491558, -5.64554e-09, -0.491558, 0.870845, 0, 0, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.00104721, 0.999999, 0, -0.999999, 0.00104721, 0, 201.185, 0)
+
+[node name="player" parent="." instance=ExtResource("2_1bvp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 1, 0)
+collision_layer = 2
+script = ExtResource("3_1bvp3")
+
+[node name="Target" parent="." instance=ExtResource("3_lquwl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.38395, 1.40687, -0.35133)
+collision_layer = 2
+collision_mask = 5
+
+[node name="floor" parent="." instance=ExtResource("1_h2yge")]
+collision_mask = 2

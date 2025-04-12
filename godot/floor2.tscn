@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cg8esugskevd"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_lhajs"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_f3x70"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("WorldBoundaryShape3D_lhajs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_f3x70")
